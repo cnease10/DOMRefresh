@@ -16,7 +16,10 @@ loadEventListeners();
 function loadEventListeners() {
     //add task event
     form.addEventListener('submit', e => { addTask(e); });
- 
+    //remove task
+    taskList.addEventListener('click', e => {removeTask(e); })
+    //clear tasks
+    clear.addEventListener('click', e => {clearTasks(e); })
 }
 
 
@@ -48,13 +51,32 @@ function addTask(e) {
     taskList.appendChild(li);
 
     //clear input
-    //input.value = "";
+    input.value = "";
     //working
 
     e.preventDefault();
 }
 //const val = e;
 //console.log(val)
-//getting ref error e is not defined --- has something to do with function setup for event listener
-//
 
+//remove task
+
+function removeTask(e) {
+    if(e.target.parentElement.classList.contains('delete-item')) {
+        //delegation
+        e.target.parentElement.parentElement.remove();
+    }
+    
+}
+//clear tasks
+
+function clearTasks(e) {
+    //could use this
+    //taskList.innerHTML = "";
+
+    //but this is faster and increases performance
+    //https://coderwall.com/p/nygghw/don-t-use-innerhtml-to-empty-dom-elements
+    while(taskList.firstChild) {
+        taskList.removeChild(taskList.firstChild);
+    }
+}
