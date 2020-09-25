@@ -45,9 +45,9 @@ function getTasks() {
         // create link element
         const link = document.createElement('a')
         //add class
-        link.className = 'delete-item ';
+        link.className = 'delete-item';
         //add icon html
-        link.innerHTML = '<i class="fa fa-remove></i>'
+        link.innerHTML = '<i class="fa fa-remove"></i>'
         //append link to li
         li.appendChild(link);
 
