@@ -3,7 +3,7 @@ const form = document.querySelector('#form');
 const taskList = document.querySelector('.collection');
 const clear = document.querySelector('.clear-task');
 const input = document.querySelector('#task');
-
+const buttonAcc = document.querySelectorAll('.see-more')
 // console.log(form);
 // console.log(taskList);
 // console.log(clear);
@@ -168,10 +168,44 @@ function clearTasksFromLocalStorage() {
     localStorage.clear();
 }
 
+//a for loop to select each button that has the same class name in the buttonAcc list
+//we do this to add an event listener to each button because if you just add it to the class
+//then it only adds it to first one
+//on click, we run a function that gives the class "see-more" an active class
+//we can use this in the function because it is in scope and refers to the buttonAcc[i] that we are on
+//we then associate the section that relates to each button index
+//check to see if the section is currently hidden or not and then display the opposite 
+for (i = 0; i <buttonAcc.length; i++) {
+    buttonAcc[i].addEventListener("click", function() {
+     this.classList.toggle("active")
+     let section = this.nextElementSibling;
+       console.log(section);
+     if (section.style.display === 'block') {
+        section.style.display = 'none';
+     } else {
+        section.style.display = "block";
+    }
+    })
+}
 
 
+// let i;
 
-
+// for (i = 0; i < buttonAcc.length; i++) {
+//       buttonAcc[i].addEventListener("click", function() {
+//       /* Toggle between adding and removing the "active" class,
+//       to highlight the button that controls the panel */
+//       this.classList.toggle("active");
+  
+//       /* Toggle between hiding and showing the active panel */
+//       let section = this.nextElementSibling;
+//       if (section.style.display === "block") {
+//         section.style.display = "none";
+//       } else {
+//         section.style.display = "block";
+//       }
+//     });
+//   }
 
 
 //Notes
