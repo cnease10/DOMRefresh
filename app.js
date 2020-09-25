@@ -169,6 +169,11 @@ function clearTasksFromLocalStorage() {
 }
 
 
+
+
+
+
+
 //Notes
 // JSON.parse() - parses data that is received as JSON, deserializes a JSON
 // string into a JS Object
