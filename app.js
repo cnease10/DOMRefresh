@@ -24,7 +24,7 @@ function loadEventListeners() {
     clear.addEventListener('click', e => {clearTasks(e); })
 }
 
-//get tasks from local storage
+//get tasks from local storage to present on the page
 function getTasks() {
     let tasks;
     if(localStorage.getItem('tasks') === null) {
@@ -123,13 +123,16 @@ function removeTask(e) {
 
 //remove from local storage
 function removeTaskFromLocalStorage(taskItem) {
-    console.log(taskItem)
+    //console.log(taskItem)
+    //check local storage and put it in a variable
     let tasks;
     if(localStorage.getItem('tasks') === null) {
         tasks = [];
     } else {
         tasks = JSON.parse(localStorage.getItem('tasks'));
     }
+    //loop through tasks and check if the text content matches the
+    //current task in the iteration so we can delete it
 
     tasks.forEach(function(task, index) {
         if(taskItem.textContent == task) {
@@ -137,6 +140,7 @@ function removeTaskFromLocalStorage(taskItem) {
         }
     })
 
+    //set local storage after removing a task from local storage
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
@@ -156,7 +160,29 @@ function clearTasks(e) {
     clearTasksFromLocalStorage();
 }
 
-//clear from local storage
+//clear from local storage with .clear
 function clearTasksFromLocalStorage() {
     localStorage.clear();
 }
+
+
+//Notes
+// JSON.parse() - parses data that is received as JSON, deserializes a JSON
+// string into a JS Object
+
+// JSON.strinfigy() - creates a JSON string out of an object or Array, serializes
+// a JS object into a JSON string
+
+// example of js object to JSON
+// const jsObject = {
+//     name: 'Cierra',
+//     over21: true,
+//     hungry: "always"
+// };
+// const jsObjectStr = JSON.stringify(jsObject);
+
+// console.log(jsObjectStr);
+// == "{"name": "Cierra", "over21" : true, "hungry" : "always"}"
+
+// console.log(JSON.parse(jsObjectStr));
+// == {name: "Cierra", over21: true, hungry: "always"}
