@@ -32,17 +32,20 @@ function getTasks() {
     } else {
         tasks = JSON.parse(localStorage.getItem('tasks'));
     }
+    //console.log(tasks)
     tasks.forEach(function(task) {
+        //console.log(task)
         //create li element
         const li = document.createElement('li');
+        //console.log(li)
         //add class
         li.className = 'collection-item';
         //create text node and append to li
-        li.appendChild(document.createTextNode(task.value));
+        li.appendChild(document.createTextNode(task));
         // create link element
         const link = document.createElement('a')
         //add class
-        link.className = 'delete-item';
+        link.className = 'delete-item ';
         //add icon html
         link.innerHTML = '<i class="fa fa-remove></i>'
         //append link to li
@@ -72,7 +75,7 @@ function addTask(e) {
     //create link element
     const link = document.createElement('a');
     //add class
-    link.className = "delete-item"
+    link.className = "delete-item "
     //add html icon
     link.innerHTML = '<i class="fa fa-remove"></i>'
     //append link to li
