@@ -186,3 +186,48 @@ function clearTasksFromLocalStorage() {
 
 // console.log(JSON.parse(jsObjectStr));
 // == {name: "Cierra", over21: true, hungry: "always"}
+
+// DOM Info
+// document object is root of every node in DOM
+// document object is a property of the window object
+// window object is the global top-level object 
+// document consists of what is inside of the inner window
+// parent node - node one level above or closer to document in DOM hierarchy
+// two parent properties
+// 1) parentNode
+// 2) parentElement
+// grandparent node?
+// parentNode.parentNode
+// text and comment nodes can't be parents to other nodes
+// parentNode is most common when traversing the DOM
+
+// children nodes - nodes one level below, any nodes beyond one 
+// level of nesting are referred to as descendants
+// child node properties
+// childNodes
+// firstChild
+// lastChild
+// children
+// firstElementChild
+// lastElementChild
+// for...of loops can be used to iterate through all children elements
+// for(let element of ul.children) {
+//     element.style.background = "yellow";
+// }
+// can access nodes by index number or find their length property
+
+// sibling nodes - any node on the same tree level in the DOM
+// sibling node properties
+// previousSibling
+// nextSibling
+// previousElementSibling
+// nextElementSibling
+
+// accessing elements in the DOM
+// Get ID with #demo method is getElementByID()
+// get class with .demo method is getElementsByClassName()
+// get tag with dem method is getElementsByTagName()
+// selector single querySelector()
+// selector all querySelectorAll()
+
+// https://www.digitalocean.com/community/tutorials/how-to-traverse-the-dom
