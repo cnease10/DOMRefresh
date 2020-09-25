@@ -15,19 +15,31 @@ h5 {
     padding: 10px;
 }
 
+/* accordian div centering */
 .accordian {
     text-align: center;
 }
 
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+/*style button better */
+.see-more {
+    background-color: white;
+    width: 100%;
+
+}
+
+/* adds a background color for when button is hovered over as well as when JS toggles to active*/
 .active, .see-more:hover {
     background-color: rgb(240, 225, 12);
 }
   
-  /* accordian sections hidden by default */
+/* accordian sections hidden by default 
+use off-left technique instead of display none since display none
+can mess with screen readers*/
 .more-content {
     padding: 0 18px;
-    background-color: rgb(240, 225, 12);
-    display: none;
+    background-color: white;
+    left: -9999px;
+    position: relative;
     overflow: hidden;
   }
+

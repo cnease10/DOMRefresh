@@ -180,10 +180,10 @@ for (i = 0; i <buttonAcc.length; i++) {
      this.classList.toggle("active")
      let section = this.nextElementSibling;
        console.log(section);
-     if (section.style.display === 'block') {
-        section.style.display = 'none';
+     if (section.style.left === '0px') {
+        section.style.left = '-9999px';
      } else {
-        section.style.display = "block";
+        section.style.left = "0px";
     }
     })
 }
