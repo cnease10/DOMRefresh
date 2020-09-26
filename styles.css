@@ -10,7 +10,11 @@ h1 {
 h5 {
     color: #26a69a;
 }
-
+h4 {
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
 .delete-item {
     padding: 10px;
 }
@@ -23,7 +27,7 @@ h5 {
 /*style button better */
 .see-more {
     background-color: white;
-    width: 100%;
+    width: 75%;
 
 }
 
@@ -43,3 +47,38 @@ can mess with screen readers*/
     overflow: hidden;
   }
 
+
+/* border-radius to make tabs rounded instead of squared off
+padding to space the tabs out, background color to make the tab
+look like a tab*/
+
+/* With 'display: inline', the width, height, margin-top, 
+margin-bottom, and float properties have no effect. */
+
+
+input[name = "tabs"] { display: none; }
+input + label { display: inline-block }
+
+input ~ .tab { display: none }
+#tab1:checked ~ .tab.content1,
+#tab2:checked ~ .tab.content2,
+#tab3:checked ~ .tab.content3,
+#tab4:checked ~ .tab.content4,
+#tab5:checked ~ .tab.content5 { display: block; }
+
+input + label {
+  border: 1px solid #999;
+  background: #EEE;
+  padding: 4px 12px;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  top: 1px;
+}
+input:checked + label {
+  background: #FFF;
+  border-bottom: 1px solid transparent;
+}
+input ~ .tab {
+  border-top: 1px solid #999;
+  padding: 12px;
+}

@@ -168,6 +168,8 @@ function clearTasksFromLocalStorage() {
     localStorage.clear();
 }
 
+// ACCORDION
+
 //a for loop to select each button that has the same class name in the buttonAcc list
 //we do this to add an event listener to each button because if you just add it to the class
 //then it only adds it to first one
@@ -187,6 +189,42 @@ for (i = 0; i <buttonAcc.length; i++) {
     }
     })
 }
+
+// //TABS
+// //get tabs
+// const tabs = document.querySelectorAll('.tab');
+// const tabInformation = document.querySelectorAll(".tab-info")
+// const list = [];
+// console.log(tabInformation)
+// for (i=0; i < tabInformation.length; i++) {
+//     const infoSection = tabInformation[i]
+//     console.log(infoSection)
+//     list.push(infoSection);
+
+// }
+// console.log(list)
+
+
+// //loop through tabs to assign event listener
+// for (i = 0; i < tabs.length; i++) {
+//     tabs[i].addEventListener("click", function() {
+//         console.log('event listener added')
+//         const tabIndex = tabs[i].index()
+//         list.forEach(item)
+//         function item(section, index) {
+//             console.log(index)
+//             const listIndex = index
+//         }
+//         if (tabIndex ==  listIndex) {
+//             console.log("indexes match")
+//         } else {
+//             console.log("indexes don't match")
+//         }
+//     })
+// }
+
+
+
 
 
 
