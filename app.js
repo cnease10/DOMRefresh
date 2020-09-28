@@ -190,39 +190,65 @@ for (i = 0; i <buttonAcc.length; i++) {
     })
 }
 
-// //TABS
-// //get tabs
-// const tabs = document.querySelectorAll('.tab');
-// const tabInformation = document.querySelectorAll(".tab-info")
-// const list = [];
-// console.log(tabInformation)
-// for (i=0; i < tabInformation.length; i++) {
-//     const infoSection = tabInformation[i]
-//     console.log(infoSection)
-//     list.push(infoSection);
+// ANNIES Teaches TABS
+// https://github.com/AnnaFinnerty
 
-// }
-// console.log(list)
+let annieArray = ['tab1', 'tab2', 'tab3'];
+const navBar = document.querySelector('nav');
+const tabContainer = document.querySelector('.tab-container');
+let currentTab = 0;
+showContent();
+for (let i = 0; i < annieArray.length; i++) {
+    let button = document.createElement('button');
+    button.addEventListener("click", e => {buttonPicked(e)})
+    button.textContent = annieArray[i];
+    button.id = `button-` + i;
+    button.data = i;
+    navBar.append(button);
+    if (currentTab == i) {
+        button.className = "selected-button"
+    }
+    
+}
 
+//where can we put stuff from the event 
+// local storage - possible but not best solution
+// add an id or class name
+// add fields to an html object that start with data 
 
-// //loop through tabs to assign event listener
-// for (i = 0; i < tabs.length; i++) {
-//     tabs[i].addEventListener("click", function() {
-//         console.log('event listener added')
-//         const tabIndex = tabs[i].index()
-//         list.forEach(item)
-//         function item(section, index) {
-//             console.log(index)
-//             const listIndex = index
-//         }
-//         if (tabIndex ==  listIndex) {
-//             console.log("indexes match")
-//         } else {
-//             console.log("indexes don't match")
-//         }
-//     })
-// }
+function buttonPicked(e) {
+    //console.log(e.target.data);
+    //what needs to happen
+    // we need to show the content in the .tab-container
+    //currentTab is still 0
+    //possible have an object that has tab and tab info stored
+    //add an id for the button
+    
+    const button = document.querySelector("#button-" + currentTab);
+    const newButton = document.querySelector("#button-" + e.target.data);
+    //console.log(newButton)
+    //console.log(button);
+    // if (button.className == "selected-button"){
+    //     button.className = ""
 
+    // } else {
+    //    newButton.className = "selected-button"
+    // }
+    button.className = "";
+    newButton.className = "selected-button";
+    currentTab = e.target.data;
+    //after updating button for tab, update content
+    showContent();
+
+}
+
+function showContent() {
+    while (tabContainer.firstChild) {
+        tabContainer.removeChild(tabContainer.firstChild);
+    }
+    //if there is something in the tab container, kill it and empty the container
+    tabContainer.textContent = annieArray[currentTab];
+}
 
 
 

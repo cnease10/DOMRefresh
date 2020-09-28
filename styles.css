@@ -2,6 +2,8 @@ body {
     background: #26a69a;
 }
 
+/* FORM */
+
 h1 {
     text-align: center;
     color: white;
@@ -55,8 +57,9 @@ look like a tab*/
 /* With 'display: inline', the width, height, margin-top, 
 margin-bottom, and float properties have no effect. */
 
+/* TABS with CSS from CSS tricks */
 
-input[name = "tabs"] { display: none; }
+/* input[name = "tabs"] { display: none; }
 input + label { display: inline-block }
 
 input ~ .tab { display: none }
@@ -81,4 +84,10 @@ input:checked + label {
 input ~ .tab {
   border-top: 1px solid #999;
   padding: 12px;
-}
+} */
+
+
+
+
+
+/* Carousel */
